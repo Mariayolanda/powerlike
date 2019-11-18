@@ -1,0 +1,73 @@
+.pl-welcome {
+    background-color: #F3F7F9;
+
+    header {
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 27px;
+        line-height: 108%;
+        text-align: center;
+        color: #004FB9;
+        margin: 33px 0 40px;
+    }
+
+    &__text {
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 108%;
+        text-align: center;
+        color: #004FB9;
+        margin-bottom: 15px;
+    }
+
+    &__options {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 108%;
+        color: #FE5200;
+        text-align: center;
+        margin-top: 18px;
+    }
+
+    &__button {
+
+        &__boton {
+            width: 266px;
+            padding: 20px 0;
+            background: #FFFFFF;
+            border: 1px solid #FF6702;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+            border-radius: 11px;
+            cursor: pointer;
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 15px;
+            text-transform: uppercase;
+            color: #004FB9;
+            margin: 0 auto 12px;
+            text-decoration: none;
+            text-align: center;
+            outline: none;
+        }
+    }
+
+    .icon-vp {
+        position: absolute;
+        left: 17%;
+        margin-top: -7px;
+    }
+
+    .icon-arrow {
+        position: absolute;
+        right: 15%;
+        margin-top: -7px;
+    }
+}

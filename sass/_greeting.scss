@@ -1,7 +1,90 @@
 .pl-greeting {
+    background-color: #F3F7F9;
+
     header {
         img {
             width: 100%;
+        }
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 27px;
+        line-height: 108%;
+        text-align: center;
+        color: #004FB9;
+        margin-top: 33px;
+    }
+
+    &__input {
+        width: 260px;
+        margin: 90px auto 33px;
+
+        span {
+            font-weight: bold;
+            font-size: 27px;
+            line-height: 108%;
+            color: #FE5200;
+            margin-right: 7px;
+        }
+
+        input[type="text"] {
+            width: 160px;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #004FB9;
+            background: transparent;
+            outline: none;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 108%;
+            color: #004FB9;
+
+            &::placeholder {/* Chrome, Firefox, Opera, Safari 10.1+*/
+                font-style: italic;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 108%;
+                color: rgba(0, 79, 185, 0.4);
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                font-style: italic;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 108%;
+                color: rgba(0, 79, 185, 0.4);
+            }
+            
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                font-style: italic;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 108%;
+                color: rgba(0, 79, 185, 0.4);
+            }
+        }
+    }
+
+    &__button {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #FFFFFF;
+        background: #FF560A;
+        border-radius: 50px;
+        padding: 17px 0px;
+        margin: 0 auto;
+        width: 195px;
+        display: block;
+        cursor: pointer;
+        opacity: .3;
+
+        &.active {
+            opacity: 1;
         }
     }
 }
