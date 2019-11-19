@@ -23,14 +23,15 @@ let profile = {
 		if (window.location.pathname === '/profile.html') {
 			$('.pl-profile__slider').slick({
 				dots: true,
-				infinite: true,
+				infinite: false,
 				speed: 300,
 				slidesToShow: 1,
 				prevArrow: '<img src="./img/icon-prev.png" alt="Power Like - Entel" class="pl-profile__slider__arrow prev-arrow">',
 				nextArrow: '<img src="./img/icon-next.png" alt="Power Like - Entel" class="pl-profile__slider__arrow next-arrow">'
 			})
 		}
-	}
+	},
+	
 }
 
 let getParameterURL = function (parameter) {
