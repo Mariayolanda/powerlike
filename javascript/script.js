@@ -14,7 +14,7 @@ let index = {
 
 let welcome = {
 	printName : function() {
-		$('#nameSpan').html(getParameterURL('user'))
+		$('#nameSpan').html(getParameterURL('user'))		
 	}
 }
 
@@ -24,6 +24,8 @@ let profile = {
 			$('.pl-profile__slider').slick({
 				dots: true,
 				infinite: false,
+				draggable: false,
+				swipe: false,
 				speed: 300,
 				slidesToShow: 1,
 				prevArrow: '<img src="./img/icon-prev.png" alt="Power Like - Entel" class="pl-profile__slider__arrow prev-arrow">',
@@ -31,7 +33,66 @@ let profile = {
 			})
 		}
 	},
-	
+	printName : function() {
+		$('.pl-welcome__button__boton').attr('href','profile.html?user=' + getParameterURL('user'))		
+	},
+	eventLevel : function() {
+		var slider1 = document.getElementById('levelCazaofertas'),
+			slider2 = document.getElementById('levelGamer'),
+			slider3 = document.getElementById('levelSociable'),
+			slider4 = document.getElementById('levelViajero'),
+			slider5 = document.getElementById('levelInfluencer')
+
+
+		slider1.oninput = function() {
+			profile.validateStars($(this))
+		}
+		
+		slider2.oninput = function() {
+			profile.validateStars($(this))
+		}
+
+		slider3.oninput = function() {
+			profile.validateStars($(this))
+		}
+
+		slider4.oninput = function() {
+			profile.validateStars($(this))
+		}
+
+		slider5.oninput = function() {
+			profile.validateStars($(this))
+		}
+	},
+	validateStars : function(object) {
+		let $padre = object.parent().parent()
+		
+		if(0 < object.val() && object.val() < 33) {
+			$padre.find('.stats .stars').find('img:nth-child(1)').show()
+			$padre.find('.stats .stars').find('img:nth-child(2)').hide()
+			$padre.find('.stats .stars').find('img:nth-child(3)').hide()
+			$padre.find('.stats .stars').find('img:nth-child(4)').hide()
+			$padre.find('.stats .stars').find('img:nth-child(5)').hide()
+			object.next().html('Bajo')
+			//console.log('bajo')			
+		} else if (34 < object.val() && object.val() < 66) {
+			$padre.find('.stats .stars').find('img:nth-child(1)').show()
+			$padre.find('.stats .stars').find('img:nth-child(2)').show()
+			$padre.find('.stats .stars').find('img:nth-child(3)').show()
+			$padre.find('.stats .stars').find('img:nth-child(4)').hide()
+			$padre.find('.stats .stars').find('img:nth-child(5)').hide()
+			object.next().html('Medio')
+			//console.log('medio')
+		} else if (67 < object.val() && object.val() < 100) {
+			$padre.find('.stats .stars').find('img:nth-child(1)').show()
+			$padre.find('.stats .stars').find('img:nth-child(2)').show()
+			$padre.find('.stats .stars').find('img:nth-child(3)').show()
+			$padre.find('.stats .stars').find('img:nth-child(4)').show()
+			$padre.find('.stats .stars').find('img:nth-child(5)').show()
+			object.next().html('Alto')
+			//console.log('alto')
+		}
+	}
 }
 
 let getParameterURL = function (parameter) {
@@ -59,6 +120,8 @@ let load_welcome = function () {
 
 let load_profile = function () {
 	profile.loadSlider()
+	profile.printName()
+	profile.eventLevel()
 }
 
 function initialize() {
