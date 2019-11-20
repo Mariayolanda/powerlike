@@ -111,19 +111,19 @@ let getParameterURL = function (parameter) {
 }
 
 let load_index = function () {
-	if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+	if (window.location.pathname.indexOf('/') > -1 || window.location.pathname.indexOf('/index.html') > -1 || window.location.pathname.indexOf('/powerlike/') || window.location.pathname.indexOf('/powerlike/index.html')) {
 		index.nameInput()
 	}
 }
 
 let load_welcome = function () {
-	if (window.location.pathname === '/welcome.html') {
+	if (window.location.pathname.indexOf('/welcome.html') > -1) {
 		welcome.printName()
 	}
 }
 
 let load_profile = function () {
-	if (window.location.pathname === '/profile.html') {
+	if (window.location.pathname.indexOf('/profile.html') > -1) {
 		profile.loadSlider()
 		profile.printName()
 		profile.eventLevel()
