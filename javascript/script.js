@@ -14,7 +14,8 @@ let index = {
 
 let welcome = {
 	printName : function() {
-		$('#nameSpan').html(getParameterURL('user'))		
+		$('#nameSpan').html(getParameterURL('user'))
+		$('.pl-welcome__button > a').attr('href','profile.html?user=' + getParameterURL('user'))
 	}
 }
 
@@ -29,10 +30,11 @@ let profile = {
 			slidesToShow: 1,
 			prevArrow: '<img src="./img/icon-prev.png" alt="Power Like - Entel" class="pl-profile__slider__arrow prev-arrow">',
 			nextArrow: '<img src="./img/icon-next.png" alt="Power Like - Entel" class="pl-profile__slider__arrow next-arrow">'
-		})		
+		})
 	},
 	printName : function() {
-		$('.pl-welcome__button__boton').attr('href','profile.html?user=' + getParameterURL('user'))		
+		$('.pl-welcome__button__boton').attr('href','profile.html?user=' + getParameterURL('user'))
+		$('#nameSpan').html(getParameterURL('user'))
 	},
 	eventLevel : function() {
 		var slider1 = document.getElementById('levelCazaofertas'),
@@ -109,11 +111,15 @@ let getParameterURL = function (parameter) {
 }
 
 let load_index = function () {
-	index.nameInput()
+	if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+		index.nameInput()
+	}
 }
 
 let load_welcome = function () {
-	welcome.printName()
+	if (window.location.pathname === '/welcome.html') {
+		welcome.printName()
+	}
 }
 
 let load_profile = function () {
