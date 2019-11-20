@@ -110,6 +110,12 @@ let profile = {
 	}
 }
 
+let loading = {
+	printName : function() {
+		$('#nameSpan').html(getParameterURL('user'))
+	}	
+}
+
 let getParameterURL = function (parameter) {
 	let pageUrl = decodeURIComponent(window.location.search.substring(1)),
 		parameters = pageUrl.split('&'),
@@ -145,10 +151,17 @@ let load_profile = function () {
 	}
 }
 
+let load_loading = function () {
+	if (window.location.pathname.indexOf('/loading.html') > -1) {
+		loading.printName()
+	}
+}
+
 function initialize() {
 	load_index()
 	load_welcome()
 	load_profile()
+	load_loading()
 }
 
 $( document ).ready(function() {

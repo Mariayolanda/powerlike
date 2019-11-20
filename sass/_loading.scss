@@ -1,0 +1,54 @@
+.pl-loading {
+    background: url(./img/background-profile.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 100vw;
+    height: 100vh;
+
+    header {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        width: 150px;
+        margin: 85px auto 60px auto;
+        position: relative;
+        text-align: center;
+
+        .wheel {
+            position: absolute;
+            top: 0;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            -webkit-animation:spin 1s linear infinite;
+            -moz-animation:spin 1s linear infinite;
+            animation:spin 1s linear infinite;
+        }
+
+        @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+        @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+        @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }       
+    }
+
+    &__text {
+        text-align: center;
+
+        .title {
+            color: #FF560A;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .paragraph {
+            color: #004FB9;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

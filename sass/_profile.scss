@@ -118,6 +118,10 @@
             }
         }
 
+        .slick-disabled {
+            display: none;
+        }
+
         .nivel {
             & > * {
                 display: inline-block;
