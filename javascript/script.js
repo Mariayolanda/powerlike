@@ -19,19 +19,17 @@ let welcome = {
 }
 
 let profile = {
-	loadSlider : function() {
-		if (window.location.pathname === '/profile.html') {
-			$('.pl-profile__slider').slick({
-				dots: true,
-				infinite: false,
-				draggable: false,
-				swipe: false,
-				speed: 300,
-				slidesToShow: 1,
-				prevArrow: '<img src="./img/icon-prev.png" alt="Power Like - Entel" class="pl-profile__slider__arrow prev-arrow">',
-				nextArrow: '<img src="./img/icon-next.png" alt="Power Like - Entel" class="pl-profile__slider__arrow next-arrow">'
-			})
-		}
+	loadSlider : function() {		
+		$('.pl-profile__slider').slick({
+			dots: true,
+			infinite: false,
+			draggable: false,
+			swipe: false,
+			speed: 300,
+			slidesToShow: 1,
+			prevArrow: '<img src="./img/icon-prev.png" alt="Power Like - Entel" class="pl-profile__slider__arrow prev-arrow">',
+			nextArrow: '<img src="./img/icon-next.png" alt="Power Like - Entel" class="pl-profile__slider__arrow next-arrow">'
+		})		
 	},
 	printName : function() {
 		$('.pl-welcome__button__boton').attr('href','profile.html?user=' + getParameterURL('user'))		
@@ -119,9 +117,11 @@ let load_welcome = function () {
 }
 
 let load_profile = function () {
-	profile.loadSlider()
-	profile.printName()
-	profile.eventLevel()
+	if (window.location.pathname === '/profile.html') {
+		profile.loadSlider()
+		profile.printName()
+		profile.eventLevel()
+	}
 }
 
 function initialize() {
