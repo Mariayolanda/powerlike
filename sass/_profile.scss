@@ -22,10 +22,7 @@
     }
 
     &__button {
-        position: absolute;
-        bottom: 8%;
-        left: 0;
-        right: 0;
+        margin-top: 40px;
 
         &__boton {
             font-weight: bold;
@@ -119,7 +116,7 @@
         }
 
         .slick-disabled {
-            display: none;
+            display: none !important;
         }
 
         .nivel {
