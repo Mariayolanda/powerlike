@@ -45,7 +45,7 @@ let profile = {
 
 
 		slider1.oninput = function() {
-			profile.validateStars($(this))
+			profile.validateOfert($(this))
 		}
 		
 		slider2.oninput = function() {
@@ -74,7 +74,7 @@ let profile = {
 			$padre.find('.stats .stars').find('img:nth-child(4)').hide()
 			$padre.find('.stats .stars').find('img:nth-child(5)').hide()
 			object.next().html('Bajo')
-			//console.log('bajo')			
+			//console.log('bajo')
 		} else if (34 < object.val() && object.val() < 66) {
 			$padre.find('.stats .stars').find('img:nth-child(1)').show()
 			$padre.find('.stats .stars').find('img:nth-child(2)').show()
@@ -91,6 +91,21 @@ let profile = {
 			$padre.find('.stats .stars').find('img:nth-child(5)').show()
 			object.next().html('Alto')
 			//console.log('alto')
+		}
+	},
+	validateOfert : function(object) {
+		let $padre = object.parent().parent()
+
+		if(0 < object.val() && object.val() < 50) {
+			$padre.find('.ofert').find('img:nth-child(1)').hide()
+			$padre.find('.ofert').find('img:nth-child(2)').show()
+			object.next().html('Bajo')
+			//console.log('bajo')
+		} else if (51 < object.val() && object.val() < 100) {
+			$padre.find('.ofert').find('img:nth-child(1)').show()
+			$padre.find('.ofert').find('img:nth-child(2)').hide()
+			object.next().html('Alto')
+			//console.log('Alto')
 		}
 	}
 }
