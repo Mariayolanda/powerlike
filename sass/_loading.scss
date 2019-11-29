@@ -1,10 +1,7 @@
 .pl-loading {
-    background: url(./img/background-profile.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
     width: 100vw;
     height: 100vh;
+    background-color: #F3F7F9;
 
     header {
         img {
@@ -39,7 +36,7 @@
         text-align: center;
 
         .title {
-            color: #FF560A;
+            color: #FD6C98;
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 20px;
